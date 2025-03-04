@@ -40,7 +40,7 @@ Multisignature wallets require multiple private keys to authorize a transaction.
 
 #### **3.6. Multisig Address Format:**
   - The wallet should generate P2SH addresses for the multisig setup using the multisig script format, which will be used in the PSBT.
-  - Example format: `bitcoincash:qz9whzvts7jk8fjtzlt32unlkv8ngrfujsq4wgy0vn`
+  - Example format: `bitcoincash:pq97ds60uzsgk4n68spqt9zfxr4r27pu4s02hz74xw`
 
 #### **3.7. UI/UX for PSBT and Multisig:**
 - Provide a user-friendly interface that allows the user to:
