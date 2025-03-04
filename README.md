@@ -1,5 +1,5 @@
 
-## **Paytaca Wallet: Multisignature (Multisig) Support with PSBT Implementation Specification**
+## **Specification for PSBT-Enabled Multisig Transactions in Paytaca Wallet**
 
 ### **1. Objective:**
 Implement multisignature (multisig) functionality into the Paytaca Wallet, using Partially Signed Bitcoin Transactions (PSBTs). This implementation will allow multiple signers to sign a transaction, enhancing security, flexibility.
