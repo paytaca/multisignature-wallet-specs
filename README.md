@@ -50,7 +50,22 @@ Multisignature wallets require multiple private keys to authorize a transaction.
   - Load the PSBT and manage the signing workflow.
   - The UI should handle all PSBT-specific actions transparently to the user, providing clear feedback on the transaction status and signing progress.
 
-#### **3.8. Security:**
+#### **3.8. PSBT Sharing via Watchtower API:
+
+- **Input:** Once a PSBT is generated, it can be shared securely with other participants using the Watchtower public API.
+  - API Endpoint: /psbt
+  - PSBT Upload: The PSBT is uploaded to the Watchtower server in its partially signed state. The Watchtower will store the PSBT temporarily until all signers have added their signatures.
+- **Output:**
+  - PSBT Retrieval: Each signer can retrieve the shared PSBT from the Watchtower server through a GET request to the same endpoint.
+  - Progress Tracking: The Watchtower will track the signing progress (number of signatures).
+  - Secure Transmission: The PSBT will be transmitted over HTTPS to ensure encryption and privacy during the sharing process. 
+
+Example Flow:
+  - Signer A generates a PSBT and uploads it to the Watchtower via the /psbt API.
+  - Signer B and Signer C can each access and sign the PSBT by using their own private keys through the same Watchtower API. Non-Paytaca participating wallets can also utilize the API.
+  - Once the required number of signatures is reached, the PSBT is marked as ready for broadcasting and can be finalized by Signer A.
+
+#### **3.9. Security:**
 - The private keys of all signers must remain confidential and must not be exposed in the wallet.
 - Implement features such as timeouts or expiration dates for PSBT transactions to prevent them from lingering indefinitely.
 
